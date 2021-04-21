@@ -70,6 +70,12 @@ class Alignment implements ComparableInterface
     private $textDirection = self::TEXT_DIRECTION_HORIZONTAL;
 
     /**
+     * RTL
+     * @var int
+     */
+    private $rtl = 0;
+
+    /**
      * Level
      * @var int
      */
@@ -169,6 +175,32 @@ class Alignment implements ComparableInterface
             $pValue = self::VERTICAL_BASE;
         }
         $this->vertical = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get RTL direction
+     *
+     * @return int
+     */
+    public function getRTL()
+    {
+        return $this->rtl;
+    }
+
+    /**
+     * Set RTL direction
+     *
+     * @param int $rtl
+     * @return $this
+     */
+    public function setRTL($rtl = 0)
+    {
+        if ($rtl == '') {
+            $rtl = 0;
+        }
+        $this->rtl = $rtl;
 
         return $this;
     }
